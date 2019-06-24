@@ -1,6 +1,6 @@
-axios=require('axios')
+// axios=require('axios')
 
-class APIHandler {
+export default class APIHandler {
   constructor (baseUrl) {
     this.BASE_URL = baseUrl;
     this.API= axios.create( {baseURL: this.BASE_URL} )
@@ -9,21 +9,22 @@ class APIHandler {
   getFullList () {
     return this.API.get("characters/")
       .then( res =>  res.data )
-      .cacth( err => console.log(err))
+      .catch( err => console.log(err))
 
   }
 
   getOneRegister (id) {
     return this.API.get(`characters/${id}`)
       .then( res => res.data)
-      .cacth( err => console.log(err))
+      .catch( err => console.log(err))
   }
 
   createOneRegister (params) {
     const {id,name, occupation, weapon, cartoon}=params.body
+    console.log(params.body)
     return this.API.post("characters/", {id, name, occupation,  weapon, cartoon})
       .then( (res) => res.data)
-      .cacth(err => console.log("Error in POST request: ", err))
+      .catch(err => console.log("Error in POST request while creating new character: ", err))
 
   }
 
@@ -35,7 +36,7 @@ class APIHandler {
 
   deleteOneRegister (id) {
     return this.API.delete(`characters/${id}`)
-      .then((res) =>res.data)
+      .then((res) =>res.data )
       .catch(err => console.log("Error in DELETErequest: ", err))
 
   }

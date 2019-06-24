@@ -7,13 +7,13 @@
   <link rel="stylesheet" href="./public/stylesheets/style.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <!-- <script type="module" src="./public/javascript/APIHandler.js"></script> 
-  <script type="module" src="./public/javascript/index.js"></script>  -->
+  <!-- <!-<script type="module" src="./public/javascript/APIHandler.js"></script>  -->
+  <script type="module" src="./public/javascript/index.js"></script> 
 
   <title>IH Characters</title>
 </head>
 <body>
-  <section class="container">
+  <section class="container" id="chars-container">
     <h1>Ironhack Characters API</h1>
     <div class="characters-container">
       <div class="character-info">
@@ -26,15 +26,16 @@
     <section class="operations">
       <div class="operation">
         <button id="fetch-all">Fetch all</button>
+        <button id="clean-all">Clean all</button>
       </div>
       <div class="operation">
         <label for="character-id">Search by ID: </label>
-        <input type="text" name="character-id">
+        <input type="text" name="character-id" id="ID-one">
         <button id="fetch-one">Fetch one</button>
       </div>
       <div class="operation delete">
         <label for="character-id-delete">Delete by ID: </label>
-        <input type="text" name="character-id-delete">
+        <input type="text" name="character-id-delete" id="ID-delete">
         <button id="delete-one">Delete one</button>
       </div>
 
@@ -86,13 +87,13 @@
         </div>
         <div class="field">
           <label for="cartoon">Is a Cartoon: </label>
-          <input name="cartoon" type="checkbox">
+          <input name="cartoon" type="checkbox" id="ID-edit">
         </div>
         <button id="update-data">Update</button>
       </form>
     </section>
   </section>
-  <script type="text/javascript" src="./public/javascript/APIHandler.js"></script>
-  <script type="text/javascript" src="./public/javascript/index.js"></script>  
+  <!-- <script type="text/javascript" src="./public/javascript/APIHandler.js"></script> -->
+  <!-- <script type="text/javascript" src="./public/javascript/index.js"></script>   -->
 </body>
 </html>
